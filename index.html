@@ -69,10 +69,11 @@
           return;
         }
 
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
         const apiUrl = `http://api.weatherapi.com/v1/current.json?key=0856b275ee7545dc83282608252001&q=${location}&aqi=yes`;
 
         try {
-          const response = await fetch(apiUrl);
+          const response = await fetch(proxyUrl + apiUrl);
           if (!response.ok) {
             throw new Error("Unable to fetch weather data");
           }
